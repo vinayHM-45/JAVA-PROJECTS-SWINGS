@@ -16,7 +16,7 @@ public class Expensecal extends JFrame implements ActionListener {
     public JLabel searchLabel;
     public JTextField searchField;
     public JButton searchButton;
-
+    //ADD TEXT FILE PATH ACCORDINGLY
     private static final String DATA_FILE = "C:\\Users\\VINAY HM\\IdeaProjects\\INTERNSHIP_MOTION_CUT\\expenses.txt";
     class Expense implements Serializable {
         String description;
@@ -221,7 +221,7 @@ public class Expensecal extends JFrame implements ActionListener {
     private void displayExpenses() {
         double totalAmount = 0;
 
-        displayArea.setText(""); // Clear the display area
+        displayArea.setText(""); 
 
         if (expenses.isEmpty()) {
             displayArea.append("No expenses to display.");
@@ -236,20 +236,20 @@ public class Expensecal extends JFrame implements ActionListener {
             }
         }
 
-        // Set the total amount label in red
+      
         String totalAmountText = "Total Amount Spent: " + totalAmount;
         displayArea.append(totalAmountText);
 
-        // Create a separate label for the total amount and set its color to red
+        
         if (totalAmountLabel != null) {
-            expense.remove(totalAmountLabel); // Remove the previous label before adding a new one.
+            expense.remove(totalAmountLabel); 
         }
         totalAmountLabel = new JLabel(totalAmountText);
         totalAmountLabel.setForeground(Color.RED);
         totalAmountLabel.setBounds(50, 500, 800, 100);
         expense.add(totalAmountLabel);
 
-        // Repaint the JFrame
+      
         expense.revalidate();
         expense.repaint();
     }
